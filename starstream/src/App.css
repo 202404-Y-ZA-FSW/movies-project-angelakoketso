@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'POppins' sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #141414;
 }
 
- a {
+a {
   text-decoration: none;
 }
 
 ul {
   list-style-type: none;
-
 }
 
 .flexSB {
@@ -26,9 +25,16 @@ ul {
   align-items: center;
 }
 
-.container{
+.flex{
+  display: flex;
+}
+
+.container {
   max-width: 90%;
   margin: auto;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
 }
 
 button {
@@ -41,8 +47,8 @@ button {
   font-size: 17px;
 }
 
-header i{
-  quotes: 40px;
+/* header i {
+  width: 40px;
   height: 40px;
   padding: 10px;
   text-align: center;
@@ -61,33 +67,39 @@ header button {
   display: none;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   header nav .flexSB {
-    display: none;
+      display: none;
   }
 
   .account {
-    display: none;
+      display: none;
   }
 
   .navMenu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0; left: 0; background-color: #e50183;
-    width: 50%;
-    height: 100vh;
-    z-index: 999;
-  }header ul li {
-    margin-top: 30px;
-    padding: 0 50px;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      background-color: #e50183;
+      width: 50%;
+      height: 100vh;
+      z-index: 999;
+  }
+
+  header ul li {
+      margin-top: 30px;
+      padding: 0 50px;
   }
 
   .toggle {
-   display: block; 
-   position: absolute;
-   top: 0;bottom: 0;right: 20px;margin: auto;
-   cursor: pointer;
-   background: none;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 20px;
+      margin: auto;
+      cursor: pointer;
+      background: none;
   }
-}
+} */

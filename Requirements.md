@@ -21,6 +21,7 @@ We will be using themoviedb API. To use it, one of you will have to register the
 
 1. Go to this [page](https://developer.themoviedb.org)
 
+
 ## Core components
 
 These are the core components that have to show up on all pages:

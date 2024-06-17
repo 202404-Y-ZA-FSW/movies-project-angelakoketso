@@ -1,15 +1,19 @@
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from './Pages/Home';
-const router =createBrowserRouter([
-  {path: '/' ,element: <Home/>},
-  
-])
+import HomePage from './Pages/HomePage'; 
+import Nav from './Components/Nav/Nav';
+
 function App() {
   return (
-    <div>
-      <RouterProvider router={router}/>
-    </div>
+    <Router>
+      <div>
+        <Nav />  
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
