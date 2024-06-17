@@ -1,3 +1,10 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import MoviesPage from './pages/MoviesPage';
+import SingleMoviePage from './pages/SingleMoviePage';
+import ActorsPage from './pages/ActorsPage';
+import SingleActorPage from './pages/SingleActorPage';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,6 +24,16 @@ function App() {
         >
           Learn React
         </a>
+        
+        <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies/:id" element={<SingleMoviePage />} />
+        <Route path="/actors" element={<ActorsPage />} />
+        <Route path="/actors/:id" element={<SingleActorPage />} />
+      </Routes>
+    </Router>
       </header>
     </div>
   );
