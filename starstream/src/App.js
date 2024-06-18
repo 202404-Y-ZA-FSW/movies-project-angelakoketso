@@ -1,41 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import MoviesPage from './pages/MoviesPage';
-import SingleMoviePage from './pages/SingleMoviePage';
-import ActorsPage from './pages/ActorsPage';
-import SingleActorPage from './pages/SingleActorPage';
-import logo from './logo.svg';
+import HomePage from './pages/HomePage.jsx';
+import MoviesPage from './pages/MoviesPage.jsx';
+import SingleMoviePage from './pages/SingleMoviePage.jsx';
+import ActorsPage from './pages/ActorsPage.jsx';
+import SingleActorPage from './pages/SingleActorPage.jsx';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        
-        <Router>
+      <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/movies/:id" element={<SingleMoviePage />} />
-        <Route path="/actors" element={<ActorsPage />} />
-        <Route path="/actors/:id" element={<SingleActorPage />} />
+        <Route path="/" component={<HomePage />} />
+        <Route path="/movies" component={<MoviesPage />} />
+        <Route path="/movies/:id" component={<SingleMoviePage />} />
+        <Route path="/actors" component={<ActorsPage />} />
+        <Route path="/actors/:id" component={<SingleActorPage />} />
       </Routes>
     </Router>
-      </header>
-    </div>
   );
 }
 
