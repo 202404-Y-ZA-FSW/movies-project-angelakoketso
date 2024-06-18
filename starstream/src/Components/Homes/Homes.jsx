@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import Home from './Home';
-import { homeData } from '../../dummyData';
-import './home.css'
+import React, { useState } from "react"
+import "./home.css"
+import { homeData } from "../../dummyData"
+import Home from "./Home"
 
 const Homes = () => {
-    const [items,setItems] =useState(homeData)
+  const [items, setItems] = useState(homeData)
+
   return (
-    <di>
-        <div className='home'>
-            <Home items={items}/>
-        </div>
-        <div className='mraging'></div>
-    </di>
+    <>
+      <section className='home'>
+        <Home items={items} />
+      </section>
+      <div className='mragin'></div>
+    </>
   )
 }
 

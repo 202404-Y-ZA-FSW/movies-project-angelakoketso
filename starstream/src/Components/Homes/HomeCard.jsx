@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react"
+import { Link } from "react-router-dom"
 
 const HomeCard = ({ item: { id, cover, name, rating, time, desc, starring, genres, tags, video } }) => {
   return (
-    <div>
+    <>
       <div className='box'>
         <div className='coverImage'>
           <img src={cover} alt='' />
@@ -46,7 +46,7 @@ const HomeCard = ({ item: { id, cover, name, rating, time, desc, starring, genre
             <Link to={`/singlepage/${id}`}>
               <button>
                 <div className='img'>
-                  <img src="./img/play-button-icon.png" alt='' />
+                  <img src='./images/play-button.png' alt='' />
                   <img src='./images/play.png' className='change' />
                 </div>
                 WATCH TRAILER
@@ -55,7 +55,7 @@ const HomeCard = ({ item: { id, cover, name, rating, time, desc, starring, genre
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

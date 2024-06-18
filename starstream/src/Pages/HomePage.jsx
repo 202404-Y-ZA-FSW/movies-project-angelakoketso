@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import Homes from '../Components/Homes/Homes';
-import { homeData } from '../dummyData';
+import { latest, recommended, upcome } from '../dummyData';
+import Upcoming from '../Components/Upcoming/Upcoming';
+import Trending from '../Components/Trending/Trending';
 
 
 
 const HomePage = () => {
-  const [items, setItems] =useState(homeData) 
+  const [items, setItems] =useState(upcome)
+  const [item, setItem] =useState(latest)
+  const [rec, setRec] =useState(recommended)
   return (
     <div>
-      <section className='home'>
+    
        <Homes items ={items}/>
-      </section>
-      
+       <Upcoming items ={items} title='Upcoming Movies'/>
+       <Upcoming items ={item} title='Upcoming Movies'/>
+       <Trending/>
+       <Upcoming items ={rec} title='Recommended Movies'/>
     </div>
   )
 }
