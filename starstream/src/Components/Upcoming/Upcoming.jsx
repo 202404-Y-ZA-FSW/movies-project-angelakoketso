@@ -1,31 +1,33 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import Ucard from "./Ucard"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import React from "react";
+import { Link } from "react-router-dom";
+import Ucard from "./Ucard";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const SampleNextArrow = (props) => {
-  const { onClick } = props
+  const { onClick } = props;
   return (
     <div className='control-btn' onClick={onClick}>
       <button className='next'>
-        <i class='fa fa-chevron-right'></i>
+        <i className='fa fa-chevron-right'></i>
       </button>
     </div>
-  )
-}
+  );
+};
+
 const SamplePrevArrow = (props) => {
-  const { onClick } = props
+  const { onClick } = props;
   return (
     <div className='control-btn' onClick={onClick}>
       <button className='prev'>
-        <i class='fa fa-chevron-left'></i>
+        <i className='fa fa-chevron-left'></i>
       </button>
     </div>
-  )
-}
-const Upcomming = ({ items, title }) => {
+  );
+};
+
+const Upcoming = ({ items, title }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -43,7 +45,7 @@ const Upcomming = ({ items, title }) => {
         },
       },
     ],
-  }
+  };
   return (
     <>
       <section className='upcome'>
@@ -56,9 +58,7 @@ const Upcomming = ({ items, title }) => {
             <Slider {...settings}>
               {items.map((item) => {
                 return (
-                  <>
-                    <Ucard key={item.id} item={item} />
-                  </>
+                  <Ucard key={item.id} item={item} />
                 )
               })}
             </Slider>
@@ -66,7 +66,7 @@ const Upcomming = ({ items, title }) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Upcomming
+export default Upcoming;

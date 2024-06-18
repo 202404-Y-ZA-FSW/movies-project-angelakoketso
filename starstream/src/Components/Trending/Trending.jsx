@@ -1,17 +1,15 @@
-import React, { useState } from "react"
-import { trending } from "../../dummyData"
-import Home from "../Homes/Home"
-import "./trending.css"
+import React, { useState, useEffect } from "react";
+import Home from "../Homes/Home";
+import "./trending.css";
 
-const Trending = () => {
-  const [items, setItems] = useState(trending)
+const Trending = ({ items }) => {
   return (
     <>
       <section className='trending'>
         <Home items={items} />
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Trending
+export default Trending;

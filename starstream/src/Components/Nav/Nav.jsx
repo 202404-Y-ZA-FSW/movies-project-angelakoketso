@@ -21,7 +21,7 @@ const Nav = () => {
                 <a href='/'>Movies</a>
               </li>
               <li>
-                <a href='/'>Pages</a>
+                <a href='/'>Actors</a>
               </li>
             </ul>
             <button className='toggle' onClick={() => setMobile(!mobile)}>

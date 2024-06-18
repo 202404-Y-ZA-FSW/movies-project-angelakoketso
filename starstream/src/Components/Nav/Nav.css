@@ -66,3 +66,43 @@ header button {
     background: none;
   }
 }
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.flexSB {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex{
+  display: flex;
+}
+
+.container {
+  max-width: 90%;
+  margin: auto;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+button {
+  background-color: #e50183;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 12px 40px;
+  font-weight: 500;
+  font-size: 17px;
+}

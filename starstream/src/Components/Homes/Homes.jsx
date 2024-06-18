@@ -1,19 +1,16 @@
-import React, { useState } from "react"
-import "./home.css"
-import { homeData } from "../../dummyData"
-import Home from "./Home"
+import React, { useState, useEffect } from "react";
+import "./home.css";
+import Home from "./Home";
 
-const Homes = () => {
-  const [items, setItems] = useState(homeData)
-
+const Homes = ({ items }) => {
   return (
     <>
       <section className='home'>
         <Home items={items} />
       </section>
-      <div className='mragin'></div>
+      <div className='margin'></div>
     </>
-  )
-}
+  );
+};
 
-export default Homes
+export default Homes;
