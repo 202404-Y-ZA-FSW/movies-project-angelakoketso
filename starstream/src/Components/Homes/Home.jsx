@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HomeCard from "./HomeCard";
+import '/home.css'
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;

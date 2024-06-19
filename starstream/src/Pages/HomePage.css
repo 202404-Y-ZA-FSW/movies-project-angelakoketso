@@ -1,0 +1,33 @@
+home-page {
+    padding-top: 80px; /* Adjust padding to avoid overlap with the navbar */
+}
+
+.trending-movies {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.trending-movie {
+    position: relative;
+    width: 30%;
+    margin: 10px;
+}
+
+.trending-movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.trending-movie h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+}

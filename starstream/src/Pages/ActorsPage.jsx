@@ -1,11 +1,12 @@
-// src/Pages/ActorsPage.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ActorsPage.css';
 
 const ActorsPage = () => {
   const [actors, setActors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchActors = async () => {
@@ -27,6 +28,10 @@ const ActorsPage = () => {
     fetchActors();
   }, []);
 
+  const handleActorClick = (actorId) => {
+    navigate(`/actor/${actorId}`);
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -40,8 +45,12 @@ const ActorsPage = () => {
       <h1>Actors</h1>
       <div className='content'>
         {actors.map(actor => (
-          <div key={actor.id} className='actor-card'>
-            <img src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`} alt={actor.name} />
+          <div key={actor.id} className='actor-card' onClick={() => handleActorClick(actor.id)}>
+            {actor.profile_path ? (
+              <img src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`} alt={actor.name} />
+            ) : (
+              <div>No image available</div>
+            )}
             <h3>{actor.name}</h3>
           </div>
         ))}

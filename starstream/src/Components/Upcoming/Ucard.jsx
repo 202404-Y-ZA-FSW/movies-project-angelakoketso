@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Ucard.css';
 
 const Ucard = ({ item: { id, poster_path, title, vote_average, release_date } }) => {
   return (
-    <div className='box'>
+    <Link to={`/movie/${id}`} className='box'>
       <div className='coverImage'>
         <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
       </div>
@@ -14,7 +16,7 @@ const Ucard = ({ item: { id, poster_path, title, vote_average, release_date } })
         </div>
         <span className='release_date'>{release_date}</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

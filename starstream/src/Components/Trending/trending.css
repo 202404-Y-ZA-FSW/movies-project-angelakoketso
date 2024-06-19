@@ -19,7 +19,7 @@
   }
   
   .content {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     gap: 20px;
   }
