@@ -39,8 +39,27 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="credits">
+        <p>Developed by:</p>
+        <ul>
+          <li>
+            <p>Angela King - 
+              <a href="https://github.com/angelaking" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+              <a href="https://www.linkedin.com/in/angelaking" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+          </li>
+          <li>
+            <p>Koketso Lepulana - 
+              <a href="https://github.com/koketsol" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+              <a href="https://www.linkedin.com/in/koketsol" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+          </li>
+          <li>
+          </li>
+        </ul>
+      </div>
       <div className="copyright">
-        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+        <p>&copy; 2024 StarStream. All rights reserved.</p>
       </div>
     </div>
   );
