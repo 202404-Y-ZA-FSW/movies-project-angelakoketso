@@ -4,7 +4,7 @@
   margin-right: 30px;
 }
 
-div nav ul {
+.header nav ul {
   display: flex;
   align-items: center;
   margin: 0;
@@ -12,21 +12,21 @@ div nav ul {
   list-style: none;
 }
 
-div nav ul li {
+.header nav ul li {
   margin-left: 30px;
 }
 
-div nav a {
+.header nav a {
   color: #020210;
   text-decoration: none;
   padding: 10px;
 }
 
-div nav a:hover {
-  color: #fff;
+.header nav a:hover {
+  color: #900a0a;
 }
 
-div i {
+.header i {
   width: 40px;
   height: 40px;
   padding: 10px;
@@ -36,7 +36,7 @@ div i {
   margin: 0 10px;
 }
 
-div button {
+.header button {
   border-radius: 10px;
   font-size: 15px;
   font-weight: bold;
@@ -68,7 +68,7 @@ div button {
     z-index: 9999;
   }
 
-  header nav ul li {
+  .header nav ul li {
     align-items: flex-start;
     margin-top: 30px;
     padding: 0 20px;
@@ -138,6 +138,8 @@ button {
 
 .search-form {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .search-results {
@@ -147,7 +149,7 @@ button {
   right: 0;
   background: white;
   border: 1px solid #ddd;
-  z-index: 1000;
+  z-index: 1001;
   max-height: 300px;
   overflow-y: auto;
 }
@@ -159,6 +161,7 @@ button {
   border-bottom: 1px solid #ddd;
   text-decoration: none;
   color: black;
+  z-index: 999;
 }
 
 .search-result-item img {
@@ -184,7 +187,7 @@ button {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
+  background-color: rgb(230, 13, 13);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -204,4 +207,20 @@ button {
 
 .dropdown-content span:hover {
   background-color: #ddd;
+}
+
+.header nav ul li a,
+.header nav ul li span {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.search-form input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #333;
+  color: white;
+  outline: none;
 }

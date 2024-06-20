@@ -45,7 +45,7 @@ const Nav = () => {
     };
 
     return (
-        <header>
+        <div className='header'>
             <div className='container flexSB'>
                 <nav className='flexSB'>
                     <div className='logo'>
@@ -110,7 +110,7 @@ const Nav = () => {
                     <button>Subscribe Now</button> */}
                 </div>
             </div>
-        </header>
+        </div>
     );
 };
 
