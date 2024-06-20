@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './ActorsPage.css';
+
 
 const ActorsPage = () => {
   const [actors, setActors] = useState([]);
@@ -43,18 +43,18 @@ const ActorsPage = () => {
   return (
     <div className='container'>
       <h1>Actors</h1>
-      <div className='content'>
-        {actors.map(actor => (
-          <div key={actor.id} className='actor-card' onClick={() => handleActorClick(actor.id)}>
-            {actor.profile_path ? (
-              <img src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`} alt={actor.name} />
-            ) : (
-              <div>No image available</div>
-            )}
-            <h3>{actor.name}</h3>
-          </div>
-        ))}
-      </div>
+        <div className='content'>
+          {actors.map(actor => (
+            <div key={actor.id} className='actor-card' onClick={() => handleActorClick(actor.id)}>
+              {actor.profile_path ? (
+                <img src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`} alt={actor.name} />
+              ) : (
+                <div>No image available</div>
+              )}
+              <h3>{actor.name}</h3>
+            </div>
+          ))}
+        </div>
     </div>
   );
 };

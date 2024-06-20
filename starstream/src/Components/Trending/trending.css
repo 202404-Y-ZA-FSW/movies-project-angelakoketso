@@ -8,18 +8,18 @@
     gap: 20px;
   }
   
-  /* src/pages/HomePage.css */
+  
   .container {
     padding: 20px;
   }
   
-  /* src/pages/MoviesPage.css */
+  
   .container {
     padding: 20px;
   }
   
   .content {
-    display: grid;
+    display: flex;
     flex-wrap: wrap;
     gap: 20px;
   }

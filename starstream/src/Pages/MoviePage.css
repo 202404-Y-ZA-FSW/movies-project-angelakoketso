@@ -3,7 +3,7 @@
 .container {
     margin-top: 10vh; /* Adjust this value based on your header height */
     padding: 20px;
-    background-color: black;
+    /* background-color: black; */
   }
   
   .content {

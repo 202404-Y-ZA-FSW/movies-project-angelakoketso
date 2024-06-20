@@ -1,89 +1,79 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import Ucard from '../Components/Upcoming/Ucard';
-import './MoviePage.css';
+import useMovies from '../Components/Hooks/UseMovie';
+import './HomePage.css';  
 
-const MoviesPage = () => {
-    const [movies, setMovies] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const location = useLocation();
+const HomePage = () => {
+  const { trendingMovies, popularMovies, latestMovies, loading, error } = useMovies();
+  const [randomTrendingMovies, setRandomTrendingMovies] = useState([]);
+  const [index, setIndex] = useState(0);
 
-    const fetchMovies = async (url) => {
-        setLoading(true);
-        setError(null);
+  useEffect(() => {
+    if (trendingMovies.length > 0) {
+      const interval = setInterval(() => {
+        setIndex(prevIndex => (prevIndex + 1) % trendingMovies.length);
+      }, 5000);
 
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json();
-            setMovies(data.results);
-        } catch (error) {
-            console.error('Error fetching movies:', error);
-            setError(error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const shuffleMovies = () => {
-        setMovies(prevMovies => {
-            const shuffled = [...prevMovies];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-            return shuffled;
-        });
-    };
-
-    useEffect(() => {
-        const params = new URLSearchParams(location.search);
-        const category = params.get('category');
-        const genre = params.get('genre');
-        let url = '';
-
-        const apiKey = 'd1296bd66e7521efa2f1facf5b9ea2fe'; 
-
-        if (category) {
-            url = `https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}`;
-        } else if (genre) {
-            url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genre}`;
-        } else {
-            url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
-        }
-
-        fetchMovies(url);
-    }, [location.search]);
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            shuffleMovies();
-        }, 4000);
-
-        return () => clearInterval(intervalId);
-    }, [movies]);
-
-    if (loading) {
-        return <div>Loading...</div>;
+      return () => clearInterval(interval);
     }
+  }, [trendingMovies]);
 
-    if (error) {
-        return <div>Error: {error}</div>;
+  useEffect(() => {
+    if (trendingMovies.length > 0) {
+      const getRandomMovies = () => {
+        const shuffled = trendingMovies.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, 3);
+      };
+      setRandomTrendingMovies(getRandomMovies());
     }
+  }, [trendingMovies, index]);
 
-    return (
-        <div className='container'>
-            <h1>Movies</h1>
-            <div className='content'>
-                {movies.map(movie => (
-                    <Ucard key={movie.id} item={movie} />
-                ))}
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <div className='home-page'>
+      <div className='movie-section trending-movies'>
+        <h2>Trending Movies</h2>
+        <div className='movie-grid'>
+          {randomTrendingMovies.map(movie => (
+            <div key={movie.id} className='movie-item'>
+              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+              <h3>{movie.title}</h3>
             </div>
+          ))}
         </div>
-    );
+      </div>
+
+      <div className='movie-section popular-movies'>
+        <h2>Popular Movies</h2>
+        <div className='movie-grid'>
+          {popularMovies.map(movie => (
+            <div key={movie.id} className='movie-item'>
+              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+              <h3>{movie.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className='movie-section latest-movies'>
+        <h2>Latest Movies</h2>
+        <div className='movie-grid'>
+          {latestMovies.map(movie => (
+            <div key={movie.id} className='movie-item'>
+              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+              <h3>{movie.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default MoviesPage;
+export default HomePage;
