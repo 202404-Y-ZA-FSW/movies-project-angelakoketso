@@ -1,13 +1,13 @@
-/* src/Pages/MoviesPage.css */
-/* Add margin-top to the container to push it below the fixed header */
+
 .container {
-    margin-top: 10vh; /* Adjust this value based on your header height */
+    margin-top: 12vh;
     padding: 20px;
-    /* background-color: black; */
+    background-color: black;
   }
   
   .content {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
   }
@@ -15,5 +15,12 @@
   .content .ucard {
     flex: 1 1 30%;
     margin: 10px;
+  }
+
+  .movie-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
   }
   

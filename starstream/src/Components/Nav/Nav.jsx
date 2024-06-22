@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import UseGenres from '../Hooks/UseGenre';
 import './Nav.css';
@@ -11,6 +11,20 @@ const Nav = () => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const { genres, loading: genresLoading, error: genresError } = UseGenres();
+    const searchRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+                setSearchResults([]);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const handleSearch = async (e) => {
         e.preventDefault();
@@ -44,6 +58,10 @@ const Nav = () => {
         setMobile(false);
     };
 
+    const handleResultClick = () => {
+        setSearchResults([]);
+    };
+
     return (
         <div className='header'>
             <div className='container flexSB'>
@@ -56,7 +74,7 @@ const Nav = () => {
                             <Link to='/'>Home</Link>
                         </li>
                         <li className='dropdown'>
-                            <span>Genres</span>
+                            <Link to='/movies'>Genre</Link>
                             <div className='dropdown-content'>
                                 {genresLoading && <span>Loading...</span>}
                                 {genresError && <span>Error: {genresError}</span>}
@@ -66,7 +84,7 @@ const Nav = () => {
                             </div>
                         </li>
                         <li className='dropdown'>
-                            <span>Movies</span>
+                            <Link to='/movies'>Movies</Link>
                             <div className='dropdown-content'>
                                 <span onClick={() => handleMovieCategoryClick('top_rated')}>Top Rated</span>
                                 <span onClick={() => handleMovieCategoryClick('popular')}>Popular</span>
@@ -83,7 +101,7 @@ const Nav = () => {
                         {mobile ? <i className='fa fa-times'></i> : <i className='fa fa-bars'></i>}
                     </button>
                 </nav>
-                <div className='account flexSB'>
+                <div className='account flexSB' ref={searchRef}>
                     <form onSubmit={handleSearch} className='search-form'>
                         <input
                             type='text'
@@ -91,23 +109,19 @@ const Nav = () => {
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
-                        {/* <button type='submit'><i className='fa fa-search'></i></button> */}
                     </form>
                     {loading && <div className='loading'>Loading...</div>}
                     {error && <div className='error'>Error: {error}</div>}
                     {searchResults.length > 0 && (
                         <div className='search-results'>
                             {searchResults.map(result => (
-                                <Link key={result.id} to={`/${result.media_type === 'movie' ? 'movie' : 'actor'}/${result.id}`} className='search-result-item'>
+                                <Link key={result.id} to={`/${result.media_type === 'movie' ? 'movie' : 'actor'}/${result.id}`} className='search-result-item' onClick={handleResultClick}>
                                     <img src={`https://image.tmdb.org/t/p/w500/${result.poster_path || result.profile_path}`} alt={result.title || result.name} />
                                     <span>{result.title || result.name}</span>
                                 </Link>
                             ))}
                         </div>
                     )}
-                    {/* <i className='fas fa-bell'></i>
-                    <i className='fas fa-user'></i>
-                    <button>Subscribe Now</button> */}
                 </div>
             </div>
         </div>

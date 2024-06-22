@@ -54,13 +54,15 @@ const MoviesPage = () => {
     }
 
     return (
-        <div className='container'>
-            <h1>Movies</h1>
+        <div>
+          <h1 className='movie-header'>Movies</h1>
+          <div className='container'>
             <div className='content'>
                 {movies.map(movie => (
                     <Ucard key={movie.id} item={movie} />
                 ))}
             </div>
+        </div>
         </div>
     );
 };

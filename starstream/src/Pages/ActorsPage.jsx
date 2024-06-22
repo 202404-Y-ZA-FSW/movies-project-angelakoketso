@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import './ActorsPage.css'
 
 const ActorsPage = () => {
   const [actors, setActors] = useState([]);
@@ -41,8 +41,9 @@ const ActorsPage = () => {
   }
 
   return (
-    <div className='container'>
-      <h1>Actors</h1>
+    <div>
+      <h1 className='actors-header'>Actors</h1>
+      <div className='container'>
         <div className='content'>
           {actors.map(actor => (
             <div key={actor.id} className='actor-card' onClick={() => handleActorClick(actor.id)}>
@@ -55,6 +56,7 @@ const ActorsPage = () => {
             </div>
           ))}
         </div>
+    </div>
     </div>
   );
 };
