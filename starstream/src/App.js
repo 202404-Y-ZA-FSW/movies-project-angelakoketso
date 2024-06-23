@@ -1,24 +1,31 @@
+
+// App.js
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage.jsx';
-import MoviesPage from './pages/MoviesPage.jsx';
-import SingleMoviePage from './pages/SingleMoviePage.jsx';
-import ActorsPage from './pages/ActorsPage.jsx';
-import SingleActorPage from './pages/SingleActorPage.jsx';
-import './App.css';
+import HomePage from './Pages/HomePage';
+import MoviesPage from './Pages/MoviePage';
+import ActorsPage from './Pages/ActorsPage';
+import SingleActorPage from './Pages/SingleActorsPage';
+import SingleMoviePage from './Pages/SingleMoviePage';
+import TvSeries from './Pages/TvSeries';
+import Layout from './Components/Layout/Layout';
 
-function App() {
+const App = () => {
   return (
-      <Router>
+    <Router>
       <Routes>
-        <Route path="/" component={<HomePage />} />
-        <Route path="/movies" component={<MoviesPage />} />
-        <Route path="/movies/:id" component={<SingleMoviePage />} />
-        <Route path="/actors" component={<ActorsPage />} />
-        <Route path="/actors/:id" component={<SingleActorPage />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/actors" element={<ActorsPage />} />
+          <Route path="/movie/:movieId" element={<SingleMoviePage />} />
+          <Route path="/actor/:actorId" element={<SingleActorPage />} />
+          <Route path="/tv" element={<TvSeries />} />
+        </Route>
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

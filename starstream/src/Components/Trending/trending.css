@@ -1,0 +1,25 @@
+.trending {
+    margin: 20px 0;
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  
+  .container {
+    padding: 20px;
+  }
+  
+  
+  .actor-card {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .actor-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
