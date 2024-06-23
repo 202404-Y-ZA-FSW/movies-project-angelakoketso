@@ -236,3 +236,11 @@ button {
   color: white;
   outline: none;
 }
+
+.active {
+  color: red; 
+}
+
+.active:hover {
+  color: white; 
+}

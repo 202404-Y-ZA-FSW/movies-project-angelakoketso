@@ -12,6 +12,18 @@ const Nav = () => {
     const navigate = useNavigate();
     const { genres, loading: genresLoading, error: genresError } = UseGenres();
     const searchRef = useRef(null);
+    const [movieClicked, setMovieClicked] = useState(false);
+    const [seriesClicked, setSeriesClicked] = useState(false);
+
+    const handleMovieClick = () => {
+        setMovieClicked(true);
+        setSeriesClicked(false);
+    };
+
+    const handleSeriesClick = () => {
+        setSeriesClicked(true);
+        setMovieClicked(false);
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -71,7 +83,7 @@ const Nav = () => {
                     </div>
                     <ul className={mobile ? "navMenu-list" : "flexSB"} onClick={() => setMobile(false)}>
                         <li>
-                            <Link to='/'>Home</Link>
+                        <Link to='/' className={movieClicked ? 'active' : ''} onClick={handleMovieClick}>Home</Link>
                         </li>
                         <li className='dropdown'>
                             <Link to='/movies'>Genre</Link>
@@ -84,7 +96,7 @@ const Nav = () => {
                             </div>
                         </li>
                         <li className='dropdown'>
-                            <Link to='/movies'>Movies</Link>
+                        <Link to='/movies' className={movieClicked ? 'active' : ''} onClick={handleMovieClick}>Movies</Link>
                             <div className='dropdown-content'>
                                 <span onClick={() => handleMovieCategoryClick('top_rated')}>Top Rated</span>
                                 <span onClick={() => handleMovieCategoryClick('popular')}>Popular</span>
@@ -92,6 +104,9 @@ const Nav = () => {
                                 <span onClick={() => handleMovieCategoryClick('now_playing')}>Now Playing</span>
                                 <span onClick={() => handleMovieCategoryClick('upcoming')}>Upcoming</span>
                             </div>
+                        </li>
+                        <li>
+                            <Link to='/tv' className={seriesClicked ? 'active' : ''} onClick={handleSeriesClick}>TV Series</Link>
                         </li>
                         <li>
                             <Link to='/actors'>Actors</Link>

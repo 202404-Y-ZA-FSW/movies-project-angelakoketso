@@ -1,18 +1,40 @@
-/* Ucard.css */
-.ucard {
+/* TvSeriesPage.css */
+.tv-series-header {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .tv-series-item {
     position: relative;
     width: 200px;
     margin: 10px;
     text-align: center;
   }
   
-  .ucard img {
+  .tv-series-item img {
     width: 100%;
     height: auto;
     border-radius: 10px;
   }
   
-  .ucard .overlay {
+  .tv-series-item h3 {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .tv-series-item .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,11 +48,11 @@
     transition: opacity 0.3s ease;
   }
   
-  .ucard:hover .overlay {
+  .tv-series-item:hover .overlay {
     opacity: 1;
   }
   
-  .ucard .play-icon {
+  .tv-series-item .play-icon {
     color: #ff0000; 
     font-size: 40px;
     background: white;

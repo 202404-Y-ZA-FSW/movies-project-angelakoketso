@@ -21,7 +21,6 @@
   
   .movie-item {
     text-align: center;
-    padding: 10px;
     position: relative;
   }
   
@@ -29,7 +28,6 @@
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 10px;
   }
   
   .movie-item h3 {
@@ -111,23 +109,26 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
-    background-color: rgba(229, 1, 131, 0.8);
-    border: none;
-    border-radius: none;
-    color: white;
+    width: 0;
+    height: 0;
+    /* color: white; */
     /* padding: 10px;
     cursor: pointer;
     z-index: 1; */
-    font-size: 24px;
+    /* font-size: 24px;
     justify-content: center;
     align-items: center;
     pointer-events: none;
     width: 50px;
-    height: 50px;
+    height: 50px; */
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 20px solid #e50183;
+    border-radius: 20px;
   }
   
   .movie-item:hover .play-button {
-    display: flex;
+    display: block;
   }
 
   .carousel-hover {

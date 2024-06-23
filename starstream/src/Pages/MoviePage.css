@@ -3,6 +3,9 @@
     margin-top: 12vh;
     padding: 20px;
     background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
   }
   
   .content {

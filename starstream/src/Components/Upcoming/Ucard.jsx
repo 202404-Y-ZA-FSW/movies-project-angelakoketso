@@ -1,22 +1,20 @@
+// Ucard.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaPlay } from 'react-icons/fa';
 import './Ucard.css';
 
-const Ucard = ({ item: { id, poster_path, title, vote_average, release_date } }) => {
+const Ucard = ({ item }) => {
   return (
-    <Link to={`/movie/${id}`} className='box'>
-      <div className='coverImage'>
-        <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
-      </div>
-      <div className='content'>
-        <h2>{title}</h2>
-        <div className='rating'>
-          <i className='fa fa-star'></i>
-          <span>{vote_average}</span>
+    <div className="ucard">
+      <Link to={`/movie/${item.id}`} className="movie-link">
+        <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={item.title} />
+        <div className="overlay">
+          <FaPlay className="play-icon" />
         </div>
-        <span className='release_date'>{release_date}</span>
-      </div>
-    </Link>
+        <h3>{item.title}</h3>
+      </Link>
+    </div>
   );
 };
 
