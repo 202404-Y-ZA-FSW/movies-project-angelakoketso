@@ -4,13 +4,13 @@ const Trailer = ({trailers}) => {
     if (!trailers || trailers.length === 0) return null;
   return (
     <div>
-      <h3>Trailers:</h3>
+      <h3>Trailer:</h3>
       <iframe
-        width="560"
-        height="315"
+        width="1350"
+        height="400"
         src={`https://www.youtube.com/embed/${trailers[0].key}`}
         title="Trailer"
-        frameborder="0"
+        frameborder="10"
         allowfullscreen
       ></iframe>
     </div>

@@ -79,7 +79,7 @@ const Nav = () => {
             <div className='container flexSB'>
                 <nav className='flexSB'>
                     <div className='logo'>
-                        <img src="./img/StarStream.png" alt='StarStream' />
+                        <img src="./img/St.png" alt='StarStream' />
                     </div>
                     <ul className={mobile ? "navMenu-list" : "flexSB"} onClick={() => setMobile(false)}>
                         <li>

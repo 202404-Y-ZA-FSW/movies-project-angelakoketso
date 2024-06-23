@@ -1,4 +1,5 @@
 import React from 'react'
+import './ProductionCompany.css';
 
 const ProductionCompany = ({companies}) => {
     if (!companies) return null;

@@ -74,12 +74,12 @@
   .cast h4 span {
     color: #e50898;
   }
-  .palyButton {
+  .playButton {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .palyButton .img {
+  .playButton .img {
     position: relative;
   }
   .change {
@@ -88,15 +88,15 @@
     left: 0;
     opacity: 0;
   }
-  .palyButton img {
+  .playButton img {
     width: 90px;
     height: 90px;
     margin-right: 20px;
   }
-  .palyButton button:hover .change {
+  .playButton button:hover .change {
     opacity: 1;
   }
-  .palyButton button {
+  .playButton button {
     cursor: pointer;
     padding: 0;
     margin: 0;
@@ -109,7 +109,7 @@
     letter-spacing: 2px;
     transition: 0.5s;
   }
-  .mragin {
+  .margin {
     margin-top: 50%;
   }
   @media only screen and (max-width: 768px) {
@@ -133,10 +133,10 @@
     .home .row {
       width: 100%;
     }
-    .home .palyButton {
+    .home .playButton {
       display: none;
     }
-    .mragin {
+    .margin {
       margin-top: 0% !important;
     }
   }

@@ -6,7 +6,7 @@
   }
   
   .movie-section {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   
   .movie-section h2 {
@@ -25,7 +25,7 @@
   }
   
   .movie-item img {
-    width: 100%;
+    width: 75%;
     height: auto;
     border-radius: 10px;
   }
@@ -123,7 +123,7 @@
     height: 50px; */
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
-    border-bottom: 20px solid #e50183;
+    border-bottom: 20px solid #c301e5;
     border-radius: 20px;
   }
   
