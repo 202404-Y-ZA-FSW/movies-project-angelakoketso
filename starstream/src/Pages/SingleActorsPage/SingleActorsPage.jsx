@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ActorDetails from '../Components/ActorsDetails/ActorsDetails';
+import ActorDetails from '../../Components/ActorsDetails/ActorsDetails';
 
 const SingleActorPage = () => {
   const { actorId } = useParams();

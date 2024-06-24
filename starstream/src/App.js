@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
-import MoviesPage from './Pages/MoviePage';
-import ActorsPage from './Pages/ActorsPage';
-import SingleActorPage from './Pages/SingleActorsPage';
-import SingleMoviePage from './Pages/SingleMoviePage';
-import TvSeries from './Pages/TvSeries';
+import HomePage from './Pages/HomePage/HomePage'
+import MoviesPage from './Pages/MoviesPage/MoviePage';
+import ActorsPage from './Pages/ActorsPage/ActorsPage';
+import SingleActorPage from './Pages/SingleActorsPage/SingleActorsPage';
+import SingleMoviePage from './Pages/SingleMoviePage/SingleMoviePage';
+import TvSeries from '../src/Pages/TVShows/TvSeries'
 import Layout from './Components/Layout/Layout';
 
 const App = () => {

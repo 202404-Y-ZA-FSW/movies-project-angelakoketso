@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Ucard from '../Components/Upcoming/Ucard';
+import Ucard from '../../Components/Ucard/Ucard'
 import './MoviePage.css';
 
 const MoviesPage = () => {

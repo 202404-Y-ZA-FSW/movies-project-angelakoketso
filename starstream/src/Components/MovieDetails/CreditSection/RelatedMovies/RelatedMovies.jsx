@@ -1,5 +1,5 @@
 import React from 'react';
-import Ucard from '../../../Upcoming/Ucard';
+import Ucard from '../../../Ucard/Ucard'
 import './RelatedMovies.css'
 
 const RelatedMovies = ({ relatedMovies }) => {
