@@ -18,3 +18,4 @@ const Trending = ({ items }) => {
 };
 
 export default Trending;
+
