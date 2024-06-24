@@ -81,12 +81,12 @@ const Nav = () => {
                     <div className='logo'>
                         <img src="./img/St.png" alt='StarStream' />
                     </div>
-                    <ul className={mobile ? "navMenu-list" : "flexSB"} onClick={() => setMobile(false)}>
+                    <ul className={mobile ? "navMenu-list mobile" : "navMenu-list"} onClick={() => setMobile(false)}>
                         <li>
-                        <Link to='/' className={movieClicked ? 'active' : ''} onClick={handleMovieClick}>Home</Link>
+                            <Link to='/' className={movieClicked ? 'active' : ''} onClick={handleMovieClick}>Home</Link>
                         </li>
                         <li className='dropdown'>
-                            <Link to='/movies'>Genre</Link>
+                            <span>Genre</span>
                             <div className='dropdown-content'>
                                 {genresLoading && <span>Loading...</span>}
                                 {genresError && <span>Error: {genresError}</span>}
@@ -96,7 +96,7 @@ const Nav = () => {
                             </div>
                         </li>
                         <li className='dropdown'>
-                        <Link to='/movies' className={movieClicked ? 'active' : ''} onClick={handleMovieClick}>Movies</Link>
+                            <span className={movieClicked ? 'active' : ''} onClick={handleMovieClick}>Movies</span>
                             <div className='dropdown-content'>
                                 <span onClick={() => handleMovieCategoryClick('top_rated')}>Top Rated</span>
                                 <span onClick={() => handleMovieCategoryClick('popular')}>Popular</span>
