@@ -1,8 +1,9 @@
 import React from 'react';
 import Ucard from '../../../Upcoming/Ucard';
+import './RelatedMovies.css'
 
 const RelatedMovies = ({ relatedMovies }) => {
-  if (!relatedMovies || !Array.isArray(relatedMovies.results)) {
+  if (!relatedMovies || relatedMovies.length === 0) {
     return <div>No related movies available.</div>;
   }
 
@@ -10,7 +11,7 @@ const RelatedMovies = ({ relatedMovies }) => {
     <div className="related-movies">
       <h2>Related Movies</h2>
       <div className="related-movies-list">
-        {relatedMovies.results.slice(0, 5).map(movie => (
+        {relatedMovies.slice(0, 5).map(movie => (
           <Ucard key={movie.id} item={movie} />
         ))}
       </div>
